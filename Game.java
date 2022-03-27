@@ -54,32 +54,12 @@ public class Game extends JPanel implements Runnable, KeyListener {
         apples = new ArrayList<Apple>();
         
         start();
+    
     }
  
+ 
     
-	public void Game1() throws InterruptedException  {
-		this.r = new Random();
-		
-		new LinkedList<>();
-		while(true) {
-			long start = System.nanoTime();
-			
-			board = null;
-			board.repaint();
-			side = null;
-			side.repaint();
-			long delta = (System.nanoTime() - start) / 1000000L;
-			if(delta < FRAME_TIME) {
-				try {
-					Thread.sleep(FRAME_TIME - delta);
-				} catch(Exception e) {
-					e.printStackTrace();
-				}
-				long end = System.nanoTime();
-				System.out.println("Took "+(end - start) + " ns"); 
-			}
-		}
-	}
+	
     public void move() {
         if (snake.size() == 0) { 
         }
@@ -177,8 +157,7 @@ public class Game extends JPanel implements Runnable, KeyListener {
         repaint();
 		}
 }
-   
-   // Problem Slicing 2 
+
     @Override
 	public void keyPressed(KeyEvent e) {
 		int k = e.getKeyCode();
@@ -209,3 +188,4 @@ public class Game extends JPanel implements Runnable, KeyListener {
     public void keyTyped(KeyEvent arg0) {   
     }  
 }
+
