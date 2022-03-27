@@ -1,5 +1,7 @@
 
 
+
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.time.Duration;
@@ -15,14 +17,6 @@ public class Apple {
         x= y = squareSize;
     }  
     
-    public Apple() throws InterruptedException {
-    	Instant start = Instant.now();
-    	Thread.sleep(5000);
-    	Instant end = Instant.now();
-    	
-    	System.out.println(Duration.between(start, end));
-    }
-    
 	public void draw(Graphics g) {
     	g.setColor(Color.RED);
     	g.fillRect(axisX * x , axisY * y, x, y);
@@ -37,4 +31,13 @@ public class Apple {
     	return axisY;
     }
 
+
+
+public static void main(String[] args) throws InterruptedException {
+    long startTime = System.currentTimeMillis();
+    new SnakeGame();
+    long endTime = System.currentTimeMillis();
+    long duration = (endTime - startTime);      
+    System.out.printf("Game Duration: %d", + duration);
+}
 }
