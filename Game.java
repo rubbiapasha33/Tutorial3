@@ -187,5 +187,13 @@ public class Game extends JPanel implements Runnable, KeyListener {
     }
     public void keyTyped(KeyEvent arg0) {   
     }  
+public static void main(String[] args) throws InterruptedException {
+        long startTime = System.currentTimeMillis();
+        new Game();
+        long endTime = System.currentTimeMillis();
+        long duration = (endTime - startTime);      
+        System.out.printf("Game Duration: %d", + duration);
+    }
+
 }
 
